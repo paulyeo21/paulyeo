@@ -4,12 +4,13 @@ set -e
 TITLE="$1"
 TAG="$2"
 DATE="$3"
+CONTENT="$4"
 
 # ── Validate args ────────────────────────────────────────────────────────────
 
-if [ -z "$TITLE" ] || [ -z "$TAG" ] || [ -z "$DATE" ]; then
-  echo "Usage: ./new-entry.sh \"Title\" [blog|project|update] \"Mon YYYY\""
-  echo "Example: ./new-entry.sh \"My New Post\" blog \"Mar 2025\""
+if [ -z "$TITLE" ] || [ -z "$TAG" ] || [ -z "$DATE" ] || [ -z "$CONTENT" ]; then
+  echo "Usage: ./new-entry.sh \"Title\" [blog|project|update] \"Mon YYYY\" \"Content.\""
+  echo "Example: ./new-entry.sh \"Shipped something\" update \"Mar 2025\" \"Launched the new dashboard feature.\""
   exit 1
 fi
 
@@ -71,7 +72,7 @@ cat > "$ENTRY_FILE" <<HTMLEOF
       </div>
 
       <div class="prose">
-        <p>Write your content here.</p>
+        <p>${CONTENT}</p>
       </div>
 
     </div>
@@ -101,7 +102,7 @@ cat > "$TMPFILE" <<ITEMEOF
           <div class="entry-content">
             <span class="tag tag-${TAG}">${TAG}</span>
             <a href="entries/${SLUG}.html" class="entry-title">${TITLE}</a>
-            <p class="entry-excerpt">Add your excerpt here.</p>
+            <p class="entry-excerpt">${CONTENT}</p>
           </div>
         </li>
 ITEMEOF
@@ -119,8 +120,6 @@ echo ""
 echo "  Created : $ENTRY_FILE"
 echo "  Updated : index.html"
 echo ""
-echo "  Next:"
-echo "    1. Write content in the .prose div of $ENTRY_FILE"
-echo "    2. Update the excerpt in index.html"
-echo "    3. git add . && git commit -m \"Add: ${TITLE}\" && git push"
+echo "  Next: git add . && git commit -m \"Add: ${TITLE}\" && git push"
+echo "  (For longer posts, edit the .prose div in $ENTRY_FILE first)"
 echo ""
