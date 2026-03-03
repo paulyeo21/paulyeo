@@ -4,6 +4,8 @@
   padding: 0;
 }
 
+[hidden] { display: none !important; }
+
 :root {
   --bg: #fafaf9;
   --fg: #1c1c1c;
