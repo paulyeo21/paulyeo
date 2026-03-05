@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dotfiles Updates">
+  <title>Dotfiles Updates — Paul Yeo</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="../index.html" class="wordmark">Paul Yeo</a>
+      <nav>
+        <a href="https://github.com/paulyeo21" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/paulyeo" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:paulyeo21@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a href="../index.html" class="back-link">← Back</a>
+
+      <div class="entry-header">
+        <div class="entry-meta">
+          <span class="tag tag-update">update</span>
+          <span class="entry-date">Mar 2026</span>
+        </div>
+        <h1 class="entry-page-title">Dotfiles Updates</h1>
+      </div>
+
+      <div class="prose">
+        <p>
+          A round of improvements to my vim, tmux, and zsh setup.
+          Full notes on <a href="https://github.com/paulyeo21/dotfiles" target="_blank" rel="noopener">GitHub</a>.
+        </p>
+
+        <h2>Vim</h2>
+        <p>
+          Built out a proper Go development environment: vim-go with gopls,
+          syntax highlighting for functions/types/fields, auto-save on
+          <code>InsertLeave</code> so gopls always has fresh content, and a
+          statusline that shows gopls loading state and the current mode.
+          All vim-go commands (references, implementations, builds) now
+          consistently use the quickfix list so <code>]q</code>/<code>[q</code>
+          navigation works everywhere. Also added <code>:Note</code> to open
+          today's Obsidian daily note without leaving vim.
+        </p>
+
+        <h2>Zsh</h2>
+        <p>
+          Replaced a pile of <code>wb_mysql_*</code> aliases with a single
+          <code>wbdb</code> function — <code>wbdb prod</code>, <code>wbdb qa</code>,
+          <code>wbdb dev</code> — and added a <code>wb</code> function for running
+          scripts against different W&B environments. Switched to the
+          <a href="https://github.com/sindresorhus/pure" target="_blank" rel="noopener">Pure</a>
+          prompt for async git status in the shell.
+        </p>
+
+        <h2>Tmux</h2>
+        <p>
+          Added <code>tm</code>: an fzf picker over tmux sessions that falls back
+          to creating a new session if none match. Simplified the status bar now
+          that Pure handles per-pane context — it shows only session name and time.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="mailto:paulyeo21@gmail.com">paulyeo21@gmail.com</a>
+      <div class="footer-links">
+        <a href="https://github.com/paulyeo21" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/paulyeo" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
