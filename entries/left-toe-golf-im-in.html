@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Left Toe Golf: “I'm in” — shareable game links">
+  <title>Left Toe Golf: “I'm in” — Paul Yeo</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <a href="../index.html" class="wordmark">Paul Yeo</a>
+      <nav>
+        <a href="https://github.com/paulyeo21" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/paulyeo" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:paulyeo21@gmail.com">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <a href="../index.html" class="back-link">← Back</a>
+
+      <div class="entry-header">
+        <div class="entry-meta">
+          <span class="tag tag-update">update</span>
+          <span class="entry-date">Jul 2026</span>
+        </div>
+        <h1 class="entry-page-title">Left Toe Golf: “I'm in”</h1>
+      </div>
+
+      <div class="prose">
+        <p>
+          Left Toe Golf started as a watcher — it polled courses every minute and
+          texted you when a tee time opened up. That's gone. The new core is
+          <strong>“I'm in”</strong>: a shareable game link that gets a group
+          committed to a round.
+        </p>
+        <p>
+          Create a game — course, date, time window, group size — and drop the
+          link into any group chat. The page shows live availability for that
+          window, who's in, and a spots-left counter. Tapping “I'm in” takes a
+          name and phone number, nothing else. No accounts, no app. Spots fill
+          first-come-first-served; extras land on a waitlist and get promoted
+          automatically (with a text) when someone drops.
+        </p>
+        <p>
+          When the group hits quorum, the organizer gets an SMS with a deep link
+          to the course's booking page. Once they confirm the booked time,
+          everyone who's in gets a confirmation text. It also works in reverse —
+          if you already booked a tee time, create the game with the reserved
+          slot and use the link to fill the remaining seats. And if the booked
+          time moves after confirmation, re-locking the game texts the group the
+          change.
+        </p>
+        <p>
+          The tradeoff behind the pivot: constant machine-paced polling is
+          exactly what booking sites block, and it doesn't scale. Tee times are
+          now fetched on demand — when someone runs a query or opens a game link
+          — behind a short-TTL cache, so a burst of link opens is one upstream
+          fetch. The notification flips from “a slot opened” to “someone started
+          a game,” which is the text you actually wanted anyway.
+        </p>
+        <p>
+          Start a game: <a href="https://lefttoegolf.com/g/new" target="_blank" rel="noopener">lefttoegolf.com/g/new</a>
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="mailto:paulyeo21@gmail.com">paulyeo21@gmail.com</a>
+      <div class="footer-links">
+        <a href="https://github.com/paulyeo21" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/paulyeo" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
